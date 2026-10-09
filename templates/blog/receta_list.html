@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Recetas bien nuestras 🍲</h2>
+<p class="text-muted">Guisos, milanesas, estofados - lo que se come en casa.</p>
+<div class="row">
+{% for receta in recetas %}
+<div class="col-md-6 mb-4">
+<div class="card shadow-sm h-100">
+{% if receta.imagen %}<img src="{{ receta.imagen.url }}" style="height:200px;object-fit:cover" class="card-img-top">{% endif %}
+<div class="card-body">
+<span class="badge bg-primary">{{ receta.get_categoria_display }}</span> <span class="badge bg-secondary">{{ receta.tiempo }}</span>
+<h5 class="mt-2"><a href="{% url 'detalle_receta' receta.pk %}" class="text-decoration-none text-dark">{{ receta.titulo }}</a></h5>
+<p>{{ receta.descripcion }}</p>
+<small>Por {{ receta.autor }} | {{ receta.fecha|date:"d/m/Y" }}</small>
+</div>
+</div>
+</div>
+{% empty %}
+<div class="alert alert-warning">Todavía no cargaste recetas. ¡Andá al admin y cargá el Guiso de Lentejas!</div>
+{% endfor %}
+</div>
+{% endblock %}
