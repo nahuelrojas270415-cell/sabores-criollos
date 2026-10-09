@@ -8,7 +8,6 @@ Blog hecho en Django con 4 recetas argentinas: Milanesas, Fideos con tuco, etc.
 
 ### Demo Online (URL desplegada)
 **https://nahuelrojas270415.pythonanywhere.com/**
-*(Si aún no está deployado, ver pasos de deploy abajo)*
 
 ### Funcionalidades
 - Modelos: Receta (titulo, descripcion, imagen, autor, fecha)
